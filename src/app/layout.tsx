@@ -27,8 +27,9 @@ export const metadata: Metadata = {
     "Tollywood",
   ],
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    // Filenames match public/ on GitHub (space must be encoded)
+    icon: [{ url: "/FB%20icon.png", type: "image/png" }, { url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/FB%20icon.png" }, { url: "/icon.png" }],
   },
   appleWebApp: {
     capable: true,
