@@ -2,13 +2,17 @@
 
 **Never watch alone unless you want to.**
 
-Hyderabad-first social movie seat sharing app — find companions, share extra seats, and chat safely with ticket proof.
+Hyderabad-first social movie seat sharing demo — find companions, share extra seats, chat safely.
 
-## Live demo
+## Live on Vercel
 
-Deployed on Vercel (see latest deployment).
+Import this repo into Vercel (one click):
 
-## Quick start
+**https://vercel.com/new/clone?repository-url=https://github.com/Vinzz007Raw/flixbuddy**
+
+Or: [vercel.com/new](https://vercel.com/new) → Import `Vinzz007Raw/flixbuddy`
+
+## Local development
 
 ```bash
 npm install
@@ -19,18 +23,17 @@ Open http://localhost:3000
 
 ### Demo login
 
-1. Open Profile or Post
+1. Open **Profile** or **Post**
 2. Enter name + 10-digit phone
 3. OTP: `123456` (or any 6 digits)
 
-Data persists in browser `localStorage` key `flixbuddy-v1`.
+Data is stored in browser `localStorage` (key `flixbuddy-v1`).
 
 ## Stack
 
 - Next.js 16 + TypeScript + Tailwind CSS 4
-- Demo state: client store + localStorage
-- Planned: Supabase Auth, DB, Storage, Realtime
+- Client demo store (ready for Supabase)
 
 ## Disclaimer
 
-FlixBuddy is a social connector, not a ticket marketplace. Always verify tickets and follow theater policies.
+Social connector — not a ticket marketplace. Verify tickets and follow theater policies.
