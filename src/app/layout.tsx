@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     "ticket sharing",
     "Tollywood",
   ],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

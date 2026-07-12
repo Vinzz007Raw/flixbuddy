@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MapPin, Bell } from "lucide-react";
 import { useApp } from "@/lib/store";
 import { Avatar } from "./ui";
+import { Logo } from "./Logo";
 
 export function TopBar({
   title,
@@ -22,7 +23,7 @@ export function TopBar({
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto max-w-lg px-4 h-14 flex items-center justify-between gap-3">
+      <div className="mx-auto max-w-lg px-4 h-16 sm:h-[4.5rem] flex items-center justify-between gap-3">
         <div className="flex items-center gap-2 min-w-0">
           {showBack ? (
             <Link
@@ -32,16 +33,7 @@ export function TopBar({
               ← Back
             </Link>
           ) : (
-            <Link href="/" className="flex items-center gap-2 shrink-0">
-              <span className="h-8 w-8 rounded-xl bg-accent flex items-center justify-center text-white font-display font-bold text-sm shadow-md shadow-accent/30">
-                FB
-              </span>
-              {!title && (
-                <span className="font-display font-bold text-lg tracking-tight">
-                  Flix<span className="text-accent">Buddy</span>
-                </span>
-              )}
-            </Link>
+            <Logo variant={title ? "mark" : "full"} size="md" />
           )}
           {title && (
             <h1 className="font-display font-bold text-base truncate">

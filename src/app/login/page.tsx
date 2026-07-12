@@ -6,7 +6,8 @@ import Link from "next/link";
 import { TopBar } from "@/components/TopBar";
 import { Button, Input } from "@/components/ui";
 import { useApp } from "@/lib/store";
-import { Film, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 function LoginForm() {
   const router = useRouter();
@@ -65,16 +66,18 @@ function LoginForm() {
       <TopBar title="Login" showBack backHref="/" />
 
       <main className="px-4 pt-8 space-y-6 max-w-sm mx-auto">
-        <div className="text-center space-y-2">
-          <div className="h-14 w-14 mx-auto rounded-2xl bg-accent flex items-center justify-center text-white shadow-lg shadow-accent/30">
-            <Film className="h-7 w-7" />
+        <div className="text-center space-y-4">
+          <div className="flex justify-center">
+            <Logo href="" variant="full" size="xl" />
           </div>
-          <h1 className="font-display text-2xl font-extrabold">
-            Welcome to FlixBuddy
-          </h1>
-          <p className="text-sm text-muted">
-            Phone OTP keeps Hyderabad movie buddies real and trusted.
-          </p>
+          <div>
+            <h1 className="font-display text-2xl font-extrabold">
+              Welcome back
+            </h1>
+            <p className="text-sm text-muted mt-1">
+              Phone OTP keeps Hyderabad movie buddies real and trusted.
+            </p>
+          </div>
         </div>
 
         {step === "phone" ? (
