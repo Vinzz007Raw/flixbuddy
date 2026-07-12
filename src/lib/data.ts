@@ -1,0 +1,298 @@
+import type { Conversation, ChatMessage, Listing, Movie, Theater, User } from "./types";
+
+export const movies: Movie[] = [
+  {
+    id: "m1",
+    title: "Pushpa 2: The Rule",
+    language: "Telugu",
+    poster:
+      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=900&fit=crop&q=80",
+    genre: "Action",
+    trending: true,
+  },
+  {
+    id: "m2",
+    title: "They Call Him OG",
+    language: "Telugu",
+    poster:
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=900&fit=crop&q=80",
+    genre: "Action",
+    trending: true,
+  },
+  {
+    id: "m3",
+    title: "Coolie",
+    language: "Tamil",
+    poster:
+      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=600&h=900&fit=crop&q=80",
+    genre: "Action",
+    trending: true,
+  },
+  {
+    id: "m4",
+    title: "War 2",
+    language: "Hindi",
+    poster:
+      "https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=600&h=900&fit=crop&q=80",
+    genre: "Action",
+    trending: true,
+  },
+  {
+    id: "m5",
+    title: "Superman",
+    language: "English",
+    poster:
+      "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=900&fit=crop&q=80",
+    genre: "Superhero",
+    trending: false,
+  },
+  {
+    id: "m6",
+    title: "Mahavatar Narsimha",
+    language: "Hindi/Telugu",
+    poster:
+      "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=900&fit=crop&q=80",
+    genre: "Animation",
+    trending: true,
+  },
+];
+
+export const theaters: Theater[] = [
+  { id: "t1", name: "PVR Inorbit", area: "Madhapur", chain: "PVR" },
+  { id: "t2", name: "INOX Gachibowli", area: "Gachibowli", chain: "INOX" },
+  { id: "t3", name: "Asian Cinemas Radhe", area: "Kompally", chain: "Asian" },
+  { id: "t4", name: "AMB Cinemas", area: "Gachibowli", chain: "AMB" },
+  { id: "t5", name: "PVR Icon", area: "Hitech City", chain: "PVR" },
+  { id: "t6", name: "Cinepolis DSM", area: "Kondapur", chain: "Cinepolis" },
+  { id: "t7", name: "Prasads IMAX", area: "Necklace Road", chain: "Prasads" },
+  { id: "t8", name: "Sudarshan 35MM", area: "RTC X Roads", chain: "Sudarshan" },
+  { id: "t9", name: "Miraj Cinemas", area: "Banjara Hills", chain: "Miraj" },
+  { id: "t10", name: "PVR Next Galleria", area: "Panjagutta", chain: "PVR" },
+];
+
+export const users: User[] = [
+  {
+    id: "u1",
+    name: "Aarav Reddy",
+    phone: "+91 98765 43210",
+    avatar: "AR",
+    bio: "Tollywood regular · Gachibowli",
+    rating: 4.8,
+    reviewCount: 12,
+    verified: true,
+  },
+  {
+    id: "u2",
+    name: "Priya Sharma",
+    phone: "+91 91234 56789",
+    avatar: "PS",
+    bio: "Weekend movie person · Hitec City",
+    rating: 4.6,
+    reviewCount: 7,
+    verified: true,
+  },
+  {
+    id: "u3",
+    name: "Karthik M",
+    phone: "+91 99887 76655",
+    avatar: "KM",
+    bio: "IMAX addict · Banjara Hills",
+    rating: 4.9,
+    reviewCount: 21,
+    verified: true,
+  },
+  {
+    id: "u4",
+    name: "Sneha Rao",
+    phone: "+91 90000 11122",
+    avatar: "SR",
+    bio: "New here · looking for chill company",
+    rating: 5.0,
+    reviewCount: 2,
+    verified: false,
+  },
+  {
+    id: "u5",
+    name: "Vikram S",
+    phone: "+91 95555 44433",
+    avatar: "VS",
+    bio: "Friends cancelled again 😅",
+    rating: 4.4,
+    reviewCount: 5,
+    verified: true,
+  },
+];
+
+export const seedListings: Listing[] = [
+  {
+    id: "l1",
+    movieId: "m1",
+    theaterId: "t1",
+    sharerId: "u1",
+    showDate: "2026-07-13",
+    showTime: "21:30",
+    seats: 2,
+    seatsLeft: 2,
+    type: "companions",
+    pricePerSeat: 220,
+    description:
+      "Two friends cancelled last minute. Looking for chill people who love Telugu cinema. Seats in premium row.",
+    hasProof: true,
+    verified: true,
+    status: "active",
+    createdAt: "2026-07-12T08:00:00Z",
+  },
+  {
+    id: "l2",
+    movieId: "m2",
+    theaterId: "t4",
+    sharerId: "u3",
+    showDate: "2026-07-13",
+    showTime: "18:45",
+    seats: 1,
+    seatsLeft: 1,
+    type: "companions",
+    pricePerSeat: 280,
+    description: "Going alone for OG first day. Happy to split snacks too!",
+    hasProof: true,
+    verified: true,
+    status: "active",
+    createdAt: "2026-07-12T09:15:00Z",
+  },
+  {
+    id: "l3",
+    movieId: "m4",
+    theaterId: "t5",
+    sharerId: "u5",
+    showDate: "2026-07-14",
+    showTime: "20:00",
+    seats: 3,
+    seatsLeft: 3,
+    type: "sell",
+    pricePerSeat: 350,
+    description: "Extra tickets at face value only. Can meet at theater 30 mins early.",
+    hasProof: true,
+    verified: true,
+    status: "active",
+    createdAt: "2026-07-12T07:30:00Z",
+  },
+  {
+    id: "l4",
+    movieId: "m6",
+    theaterId: "t7",
+    sharerId: "u2",
+    showDate: "2026-07-13",
+    showTime: "16:00",
+    seats: 2,
+    seatsLeft: 1,
+    type: "free",
+    pricePerSeat: null,
+    description:
+      "Family tickets — 1 seat free for someone who really wants to watch. Kids-friendly vibes.",
+    hasProof: true,
+    verified: false,
+    status: "active",
+    createdAt: "2026-07-12T10:00:00Z",
+  },
+  {
+    id: "l5",
+    movieId: "m3",
+    theaterId: "t2",
+    sharerId: "u4",
+    showDate: "2026-07-15",
+    showTime: "22:15",
+    seats: 1,
+    seatsLeft: 1,
+    type: "companions",
+    pricePerSeat: 200,
+    description: "Late night show — looking for one buddy. Prefer someone who doesn't talk spoilers!",
+    hasProof: false,
+    verified: false,
+    status: "active",
+    createdAt: "2026-07-12T11:20:00Z",
+  },
+  {
+    id: "l6",
+    movieId: "m1",
+    theaterId: "t6",
+    sharerId: "u3",
+    showDate: "2026-07-14",
+    showTime: "13:30",
+    seats: 2,
+    seatsLeft: 2,
+    type: "companions",
+    pricePerSeat: 180,
+    description: "Matinee for Pushpa 2. Split cost, enjoy the mass scenes together.",
+    hasProof: true,
+    verified: true,
+    status: "active",
+    createdAt: "2026-07-11T18:00:00Z",
+  },
+];
+
+export const seedConversations: Conversation[] = [
+  {
+    id: "c1",
+    listingId: "l1",
+    sharerId: "u1",
+    seekerId: "u2",
+    lastMessage: "Sounds good! See you at 9 near the food court.",
+    updatedAt: "2026-07-12T12:30:00Z",
+  },
+];
+
+export const seedMessages: ChatMessage[] = [
+  {
+    id: "msg1",
+    conversationId: "c1",
+    senderId: "u2",
+    text: "Hi Aarav! Interested in the Pushpa 2 seats at PVR Inorbit 🎬",
+    createdAt: "2026-07-12T12:00:00Z",
+  },
+  {
+    id: "msg2",
+    conversationId: "c1",
+    senderId: "u1",
+    text: "Hey Priya! Yes, still available. 2 seats in premium.",
+    createdAt: "2026-07-12T12:05:00Z",
+  },
+  {
+    id: "msg3",
+    conversationId: "c1",
+    senderId: "u2",
+    text: "Perfect. Can we meet 30 mins before the show?",
+    createdAt: "2026-07-12T12:15:00Z",
+  },
+  {
+    id: "msg4",
+    conversationId: "c1",
+    senderId: "u1",
+    text: "Sounds good! See you at 9 near the food court.",
+    createdAt: "2026-07-12T12:30:00Z",
+  },
+];
+
+export const areas = [
+  "All areas",
+  "Gachibowli",
+  "Madhapur",
+  "Hitech City",
+  "Banjara Hills",
+  "Kondapur",
+  "Kompally",
+  "Necklace Road",
+  "RTC X Roads",
+  "Panjagutta",
+];
+
+export const typeLabels: Record<string, string> = {
+  companions: "Companions wanted",
+  sell: "Sell / transfer",
+  free: "Free seat",
+};
+
+export const typeBadge: Record<string, string> = {
+  companions: "Companions",
+  sell: "Transfer",
+  free: "Free",
+};
