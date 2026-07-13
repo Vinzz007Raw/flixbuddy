@@ -23,7 +23,7 @@ import type {
   User,
 } from "./types";
 
-const STORAGE_KEY = "flixbuddy-v1";
+const STORAGE_KEY = "flixbuddy-v2";
 
 interface AppState {
   currentUser: User | null;

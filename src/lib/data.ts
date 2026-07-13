@@ -1,39 +1,60 @@
 import type { Conversation, ChatMessage, Listing, Movie, Theater, User } from "./types";
 
+/**
+ * Current & upcoming films (Hyderabad demo).
+ * Posters prefer local /posters/* when available; Wikimedia URLs as CDN fallback.
+ */
+const P = {
+  spidey:
+    "https://upload.wikimedia.org/wikipedia/en/9/9a/Spider-Man_Brand_New_Day_poster.jpg",
+  odyssey:
+    "https://upload.wikimedia.org/wikipedia/en/9/90/The_Odyssey_%282026_film%29_poster.jpg",
+  coolie:
+    "https://upload.wikimedia.org/wikipedia/en/a/a8/Coolie_%282025_film%29_poster.jpg",
+  og: "https://upload.wikimedia.org/wikipedia/en/0/0c/OG_Poster.jpg",
+  superman:
+    "https://upload.wikimedia.org/wikipedia/en/3/32/Superman_%282025_film%29_poster.jpg",
+  doomsday:
+    "https://upload.wikimedia.org/wikipedia/en/e/ee/Avengers_Doomsday_poster.jpg",
+  supergirl:
+    "https://upload.wikimedia.org/wikipedia/en/5/58/Supergirl_%282026_film%29_poster.jpg",
+  f4: "https://upload.wikimedia.org/wikipedia/en/1/13/The_Fantastic_Four_First_Steps_poster.jpg",
+  avatar:
+    "https://upload.wikimedia.org/wikipedia/en/9/95/Avatar_Fire_and_Ash_poster.jpeg",
+  pushpa:
+    "https://upload.wikimedia.org/wikipedia/en/1/11/Pushpa_2-_The_Rule.jpg",
+};
+
 export const movies: Movie[] = [
   {
     id: "m1",
-    title: "Pushpa 2: The Rule",
-    language: "Telugu",
-    poster:
-      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=900&fit=crop&q=80",
-    genre: "Action",
+    title: "Spider-Man: Brand New Day",
+    language: "English",
+    poster: P.spidey,
+    genre: "Superhero · Action",
     trending: true,
   },
   {
     id: "m2",
-    title: "They Call Him OG",
-    language: "Telugu",
-    poster:
-      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=900&fit=crop&q=80",
-    genre: "Action",
+    title: "The Odyssey",
+    language: "English",
+    poster: P.odyssey,
+    genre: "Epic · Adventure",
     trending: true,
   },
   {
     id: "m3",
     title: "Coolie",
     language: "Tamil",
-    poster:
-      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=600&h=900&fit=crop&q=80",
+    poster: P.coolie,
     genre: "Action",
     trending: true,
   },
   {
     id: "m4",
-    title: "War 2",
-    language: "Hindi",
-    poster:
-      "https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=600&h=900&fit=crop&q=80",
+    title: "They Call Him OG",
+    language: "Telugu",
+    poster: P.og,
     genre: "Action",
     trending: true,
   },
@@ -41,19 +62,49 @@ export const movies: Movie[] = [
     id: "m5",
     title: "Superman",
     language: "English",
-    poster:
-      "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=900&fit=crop&q=80",
+    poster: P.superman,
+    genre: "Superhero",
+    trending: true,
+  },
+  {
+    id: "m6",
+    title: "Avengers: Doomsday",
+    language: "English",
+    poster: P.doomsday,
+    genre: "Superhero · Action",
+    trending: true,
+  },
+  {
+    id: "m7",
+    title: "Supergirl",
+    language: "English",
+    poster: P.supergirl,
+    genre: "Superhero",
+    trending: true,
+  },
+  {
+    id: "m8",
+    title: "The Fantastic Four: First Steps",
+    language: "English",
+    poster: P.f4,
     genre: "Superhero",
     trending: false,
   },
   {
-    id: "m6",
-    title: "Mahavatar Narsimha",
-    language: "Hindi/Telugu",
-    poster:
-      "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=900&fit=crop&q=80",
-    genre: "Animation",
+    id: "m9",
+    title: "Avatar: Fire and Ash",
+    language: "English",
+    poster: P.avatar,
+    genre: "Sci-Fi · Adventure",
     trending: true,
+  },
+  {
+    id: "m10",
+    title: "Pushpa 2: The Rule",
+    language: "Telugu",
+    poster: P.pushpa,
+    genre: "Action",
+    trending: false,
   },
 ];
 
@@ -127,16 +178,16 @@ export const seedListings: Listing[] = [
   {
     id: "l1",
     movieId: "m1",
-    theaterId: "t1",
+    theaterId: "t7",
     sharerId: "u1",
-    showDate: "2026-07-13",
+    showDate: "2026-07-31",
     showTime: "21:30",
     seats: 2,
     seatsLeft: 2,
     type: "companions",
-    pricePerSeat: 220,
+    pricePerSeat: 350,
     description:
-      "Two friends cancelled last minute. Looking for chill people who love Telugu cinema. Seats in premium row.",
+      "Opening weekend Spider-Man at Prasads IMAX. Friends cancelled — looking for chill MCU fans. Premium row.",
     hasProof: true,
     verified: true,
     status: "active",
@@ -145,15 +196,16 @@ export const seedListings: Listing[] = [
   {
     id: "l2",
     movieId: "m2",
-    theaterId: "t4",
+    theaterId: "t5",
     sharerId: "u3",
-    showDate: "2026-07-13",
+    showDate: "2026-07-17",
     showTime: "18:45",
     seats: 1,
     seatsLeft: 1,
     type: "companions",
-    pricePerSeat: 280,
-    description: "Going alone for OG first day. Happy to split snacks too!",
+    pricePerSeat: 400,
+    description:
+      "Nolan's Odyssey day one. Going alone — want one buddy who won't talk during the film!",
     hasProof: true,
     verified: true,
     status: "active",
@@ -161,16 +213,17 @@ export const seedListings: Listing[] = [
   },
   {
     id: "l3",
-    movieId: "m4",
-    theaterId: "t5",
+    movieId: "m6",
+    theaterId: "t1",
     sharerId: "u5",
-    showDate: "2026-07-14",
+    showDate: "2026-08-02",
     showTime: "20:00",
     seats: 3,
     seatsLeft: 3,
     type: "sell",
-    pricePerSeat: 350,
-    description: "Extra tickets at face value only. Can meet at theater 30 mins early.",
+    pricePerSeat: 380,
+    description:
+      "Extra Avengers: Doomsday tickets at face value. Can meet at PVR Inorbit 30 mins early.",
     hasProof: true,
     verified: true,
     status: "active",
@@ -178,17 +231,17 @@ export const seedListings: Listing[] = [
   },
   {
     id: "l4",
-    movieId: "m6",
-    theaterId: "t7",
+    movieId: "m4",
+    theaterId: "t4",
     sharerId: "u2",
-    showDate: "2026-07-13",
+    showDate: "2026-07-20",
     showTime: "16:00",
     seats: 2,
     seatsLeft: 1,
-    type: "free",
-    pricePerSeat: null,
+    type: "companions",
+    pricePerSeat: 250,
     description:
-      "Family tickets — 1 seat free for someone who really wants to watch. Kids-friendly vibes.",
+      "OG matinee at AMB. Looking for Telugu cinema fans — mass energy welcome!",
     hasProof: true,
     verified: false,
     status: "active",
@@ -199,13 +252,14 @@ export const seedListings: Listing[] = [
     movieId: "m3",
     theaterId: "t2",
     sharerId: "u4",
-    showDate: "2026-07-15",
+    showDate: "2026-07-18",
     showTime: "22:15",
     seats: 1,
     seatsLeft: 1,
     type: "companions",
-    pricePerSeat: 200,
-    description: "Late night show — looking for one buddy. Prefer someone who doesn't talk spoilers!",
+    pricePerSeat: 220,
+    description:
+      "Late night Coolie — looking for one buddy. No spoilers please!",
     hasProof: false,
     verified: false,
     status: "active",
@@ -213,20 +267,38 @@ export const seedListings: Listing[] = [
   },
   {
     id: "l6",
-    movieId: "m1",
+    movieId: "m5",
     theaterId: "t6",
     sharerId: "u3",
-    showDate: "2026-07-14",
+    showDate: "2026-07-19",
     showTime: "13:30",
     seats: 2,
     seatsLeft: 2,
     type: "companions",
-    pricePerSeat: 180,
-    description: "Matinee for Pushpa 2. Split cost, enjoy the mass scenes together.",
+    pricePerSeat: 280,
+    description: "Superman matinee. Split cost, enjoy the spectacle together.",
     hasProof: true,
     verified: true,
     status: "active",
     createdAt: "2026-07-11T18:00:00Z",
+  },
+  {
+    id: "l7",
+    movieId: "m9",
+    theaterId: "t7",
+    sharerId: "u1",
+    showDate: "2026-12-19",
+    showTime: "19:00",
+    seats: 2,
+    seatsLeft: 2,
+    type: "companions",
+    pricePerSeat: 450,
+    description:
+      "Avatar: Fire and Ash IMAX booking planned. Want 1–2 people for the full immersive experience.",
+    hasProof: true,
+    verified: true,
+    status: "active",
+    createdAt: "2026-07-12T14:00:00Z",
   },
 ];
 
@@ -246,7 +318,7 @@ export const seedMessages: ChatMessage[] = [
     id: "msg1",
     conversationId: "c1",
     senderId: "u2",
-    text: "Hi Aarav! Interested in the Pushpa 2 seats at PVR Inorbit 🎬",
+    text: "Hi Aarav! Interested in the Spider-Man Brand New Day seats at Prasads IMAX 🎬",
     createdAt: "2026-07-12T12:00:00Z",
   },
   {
